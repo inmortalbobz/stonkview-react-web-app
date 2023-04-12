@@ -32,7 +32,7 @@ const GoldRegister = () => {
     navigate(-1)
   }
   return (
-      <div className="container">
+      <div className="background-moon-two-container container">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="card mt-5">

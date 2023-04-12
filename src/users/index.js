@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {findAllAdminUsersThunk, deleteUserThunk} from "./admin/users-admin-thunk";
 
+
 const AdminControlledUserList = () => {
   const {currentUser, users} = useSelector((state) => state.users)
   const dispatch = useDispatch()

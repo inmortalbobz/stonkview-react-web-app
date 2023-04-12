@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginThunk } from "./users-thunk";
 import { useNavigate } from "react-router";
+import './background-image.css'
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -20,6 +21,10 @@ const Login = () => {
     } catch (error) {
       setError("Unable to login");
     }
+  };
+
+  const handleLoginLink = () => {
+    navigate("/register");
   };
 
   const handleChange = (setter) => (e) => setter(e.target.value);
@@ -69,6 +74,17 @@ const Login = () => {
                   >
                     Login
                   </button>
+
+                  <p className="text-center">
+                    Do not have an account?{" "}
+                    <span
+                        className="text-primary"
+                        style={{ cursor: "pointer" }}
+                        onClick={handleLoginLink}
+                    >
+                  Please Register
+                </span>
+                  </p>
                 </form>
                 {currentUser && (
                     <h2 className="mt-3 text-center">

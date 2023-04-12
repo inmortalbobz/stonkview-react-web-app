@@ -33,7 +33,7 @@ const BronzeRegister = () => {
     navigate(-1)
   }
   return(
-      <div className="container">
+      <div className="background-moon-container container">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="card mt-5">

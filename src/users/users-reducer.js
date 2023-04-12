@@ -13,7 +13,7 @@ const usersReducer = createSlice({
   },
   reducers: {
     editProfile(state, action) {
-      if (action.payload.role == "Corporate"){
+      if (action.payload.role == "Gold"){
         updateGoldUser(action.payload)
         .then(res => console.log(res));
       }

@@ -1,0 +1,29 @@
+.background-doge-container{
+  background-image: url('./doge-back-ground.jpeg');
+  /*background-size: cover;*/
+  /*background-position: center;*/
+}
+
+.background-moon-container{
+  background-image: url('./moon-bg.jpeg');
+  /*background-size: cover;*/
+  background-position: left;
+}
+
+.background-moon-two-container{
+  background-image: url('./moon-2-bg.webp');
+  background-size: cover;
+  background-position: left;
+}
+
+.background-admin-container{
+  background-image: url('./bg-clock.jpeg');
+  /*background-size: cover;*/
+  background-position: center;
+}
+
+.background-doge-flag-container{
+  background-image: url('./bg-doge-flag.jpeg');
+  background-size: cover;
+  background-position: left;
+}
