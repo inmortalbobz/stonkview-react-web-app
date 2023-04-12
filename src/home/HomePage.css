@@ -1,0 +1,23 @@
+.home-page {
+  background: linear-gradient(135deg, #f3f3f3 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 2rem;
+}
+
+.feature-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}

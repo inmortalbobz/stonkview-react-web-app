@@ -1,3 +1,4 @@
+import './doge-color.css'
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {logoutThunk} from "../users/users-thunk";
@@ -9,64 +10,50 @@ const TopNavigationBar = () => {
     dispatch(logoutThunk())
   }
   return (
-      <div className="container">
-        <div className="row">
-
-          <div className="col-xl-7">
-            <h1>
-              <Link to="/" style={{textDecoration: "none"}}>
-                <span className="text-dark">Stonk</span>
-                <span className="text-danger">View</span>
-              </Link>
-            </h1>
-            {
-                currentUser &&
-                <h6>
-                  <div className="col-5 text-primary"> Welcome, {currentUser.role} {currentUser.username}</div>
-                </h6>
-            }
-          </div>
-
-          <div className="col-xl-5">
-            <ul className="nav nav-pills">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <Link to="/" className="navbar-brand d-flex align-items-center">
+            <img src="logo.webp" alt="Logo" className="img-fluid me-2 rounded-circle" height={50} width={50} />
+            <span className="fw-bold" style={{ fontSize: '1.25rem' }}>Stonk</span>
+            <span className="fw-bold text-doge" style={{ fontSize: '1.25rem' }}>View</span>
+          </Link>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a href="/search" className="nav-link">Search</a>
+                <Link to="/search" className="nav-link">Search</Link>
               </li>
               {
                   currentUser && currentUser.role === 'Admin' &&
-                  <>
-                    <li className="nav-item">
-                      <a href="/users" className="nav-link">Users Management</a>
-                    </li>
-                  </>
+                  <li className="nav-item">
+                    <Link to="/users" className="nav-link">Users Management</Link>
+                  </li>
               }
-
               <li className="nav-item">
-                <a href="/profile" className="nav-link">View My Profile</a>
+                <Link to="/profile" className="nav-link">View My Profile</Link>
               </li>
-              {
-                  currentUser &&
-                  <>
-                    <button className="btn btn-primary" onClick={handleLogout}>
-                      Logout
-                    </button>
-                  </>
-              }
-              {
-                  !currentUser &&
-                  <>
-                    <li className="nav-item">
-                      <a href="/login" className="nav-link"> Login</a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="/register" className="nav-link"> Register</a>
-                    </li>
-                  </>
-              }
             </ul>
+            <div className="d-flex">
+              {
+                currentUser ?
+                    <>
+                      <div className="col-5"> {currentUser.role} Home, Welcome {currentUser.username}</div>
+
+                      <button className="btn btn-outline-danger" onClick={handleLogout}>
+                        Logout
+                      </button>
+                    </> :
+                    <>
+                      <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>
+                      <Link to="/register" className="btn btn-outline-primary">Register</Link>
+                    </>
+              }
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
   )
 }
+
 export default TopNavigationBar;
+
+

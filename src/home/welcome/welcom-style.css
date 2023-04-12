@@ -1,0 +1,11 @@
+.welcome-banner-image {
+  background-image: url('./doge-to-the-moon.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.welcome-users-banner {
+  height: 150px;
+  width: 100%;
+  /* add any other styles you need */
+}
