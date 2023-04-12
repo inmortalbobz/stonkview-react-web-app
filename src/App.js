@@ -21,7 +21,6 @@ import welcomeRecentNewUsersReducer
 // import followsReducer from "./follows/follows-reducer";
 
 
-
 const store = configureStore({
   reducer: {
     users: usersReducer,

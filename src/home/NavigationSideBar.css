@@ -1,0 +1,26 @@
+/* NavigationSidebar.css */
+
+.list-group-item {
+  transition: 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.list-group-item i {
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.list-group-item:hover i {
+  transform: scale(1.1);
+}
