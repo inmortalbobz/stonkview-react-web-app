@@ -2,6 +2,8 @@ import NavigationSidebar from "./left-side-bar";
 import {useDispatch, useSelector} from "react-redux";
 import WelcomeNewUsers from "./welcome";
 import {useEffect} from "react";
+import LogSummary from "./widgets/summary-widget";
+import UnLogSummary from "./widgets/summary-widget-unlog";
 import stockGraph from './assets/stock-graph.png';
 import './HomePage.css'
 
@@ -15,8 +17,10 @@ const HomePage = () => {
             <div className="col-2 d-none d-xl-block">
               <NavigationSidebar />
             </div>
+
             <div className="col-xl-10 main-content">
               {currentUser && <WelcomeNewUsers />}
+              {currentUser && <LogSummary />}
               {currentUser && (
                   <>
                     <h2 className="mb-4">Your Dashboard</h2>
@@ -40,7 +44,7 @@ const HomePage = () => {
                     </div>
                   </>
               )}
-
+              {!currentUser && <UnLogSummary />}
               {!currentUser && (
                   <div className="row">
                     <div className="col-12">
