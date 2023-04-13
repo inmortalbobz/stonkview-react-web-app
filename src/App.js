@@ -12,7 +12,7 @@ import GoldRegister from "./users/register-gold"
 import BronzeRegister from "./users/register-bronze"
 import AdminRegister from "./users/register-admin"
 import Login from "./users/login";
-// import EditProfileComponent from "./edit-profile";
+import EditProfileComponent from "./profiles/edit-profile";
 import HomePage from "./home";
 import CurrentUser from "./users/current-user";
 import TopNavigationBar from "./home/top-navigation-bar";

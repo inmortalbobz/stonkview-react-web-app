@@ -6,7 +6,8 @@ import {findAllAdminUsersThunk} from "../users/admin/users-admin-thunk";
 import {
   findFollowersThunk,
   findFollowingThunk,
-  followUserThunk
+  followUserThunk,
+  unfollowUserThunk
 } from "../follows/follows-thunk";
 
 const Profile = () => {
@@ -46,6 +47,12 @@ const Profile = () => {
       break;
     }
   }
+  const handleUnFollow = () => {
+    dispatch(unfollowUserThunk(
+        {followed:uid}
+    ))
+    navigate(0)
+  }
   return (
       <>
         <h1 className="mb-5"> {name}'s Profile</h1>
@@ -54,6 +61,13 @@ const Profile = () => {
             <button onClick={handleFollow}
                     className="btn btn-success me-2">
               Follow
+            </button>
+        }
+        {
+            notShowFollowBtn && currentUser && currentUser._id !== author &&
+            <button onClick={handleUnFollow}
+                    className="btn btn-danger me-2">
+              UnFollow
             </button>
         }
         <button

@@ -1,9 +1,3 @@
-// import {useDispatch, useSelector} from "react-redux";
-// import React, {useEffect} from "react";
-// import {useNavigate} from "react-router";
-// import NavigationSidebar from "../home/left-side-bar";
-// import "./profile.css";
-// import {findFollowersThunk, findFollowingThunk} from "../follows/follows-thunk";
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect} from "react";
 import {useNavigate} from "react-router";
@@ -53,8 +47,9 @@ const Profile = () => {
           <div className="col">
         {
             !currentUser &&
-            <h1 className="mb-5 text-center">Please login first to view
-              profile</h1>
+                <div className="alert alert-info">
+                  Please log in to view your profile.
+                </div>
         }
 
         {

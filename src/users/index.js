@@ -1,17 +1,20 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {findAllAdminUsersThunk, deleteUserThunk} from "./admin/users-admin-thunk";
+import {useNavigate} from "react-router";
 
 
 const AdminControlledUserList = () => {
   const {currentUser, users} = useSelector((state) => state.users)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(findAllAdminUsersThunk())
   }, [])
   const deleteUserHandler = (uid) => {
     dispatch(deleteUserThunk(uid))
     dispatch(findAllAdminUsersThunk())
+    navigate(0)
   }
   return (
       <div className="container">
