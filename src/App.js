@@ -49,7 +49,7 @@ function App() {
               <Route path="/register/gold" element={<GoldRegister/>}/>
               <Route path="/register/admin" element={<AdminRegister/>}/>
               <Route path="/login" element={<Login/>}/>
-              {/*<Route path="edit-profile" element={<EditProfileComponent/>}/>*/}
+              <Route path="edit-profile" element={<EditProfileComponent/>}/>
             </Routes>
           </CurrentUser>
         </div>

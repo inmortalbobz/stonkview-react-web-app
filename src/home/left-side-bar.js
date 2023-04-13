@@ -15,7 +15,7 @@ const NavigationSidebar = () => {
       <i className="bi bi-search"></i> Search
     </Link>
     <Link to="/profile" className={`list-group-item ${active === 'profile'?'active':''}`}>
-      <i className="bi bi-people"></i> Profile
+      <i className="bi bi-person"></i> Profile
     </Link>
   </div>
   );
