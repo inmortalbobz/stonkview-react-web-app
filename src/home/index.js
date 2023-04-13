@@ -1,10 +1,12 @@
 import NavigationSidebar from "./left-side-bar";
 import {useDispatch, useSelector} from "react-redux";
 import WelcomeNewUsers from "./welcome";
+import { Link } from 'react-router-dom';
 import {useEffect} from "react";
 import LogSummary from "./widgets/summary-widget";
 import UnLogSummary from "./widgets/summary-widget-unlog";
 import stockGraph from './assets/stock-graph.png';
+import wsbGraph from './assets/wsb-graph.webp'
 import './HomePage.css'
 
 const HomePage = () => {
@@ -23,7 +25,7 @@ const HomePage = () => {
               {currentUser && <LogSummary />}
               {currentUser && (
                   <>
-                    <h2 className="mb-4">Your Dashboard</h2>
+                    <h3 className="mb-4">Dashboard</h3>
                     <div className="row">
                       <div className="col-md-6">
                         <div className="card feature-card">
@@ -41,6 +43,23 @@ const HomePage = () => {
                         </div>
                       </div>
                       {/* Add more feature cards here */}
+                      <div className="col-md-6">
+                        <Link to="/wsb" className="text-decoration-none text-dark">
+                          <div className="card feature-card">
+                            <img
+                                src={wsbGraph}
+                                alt="Stock Graph"
+                                className="card-img-top"
+                            />
+                            <div className="card-body">
+                              <h5 className="card-title">WSB Sentiment</h5>
+                              <p className="card-text">
+                                Get top 50 stocks discussed on Reddit subeddit - Wallstreetbets.
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
                     </div>
                   </>
               )}
