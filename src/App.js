@@ -4,8 +4,8 @@ import usersReducer from "./users/users-reducer"
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider, useSelector} from "react-redux";
 import {Routes, Route} from "react-router";
-// import Profile from "./users/profile.js";
-// import OthersProfiles from "./users/profile-other";
+import Profile from "./profiles";
+import OthersProfiles from "./profiles/profile-other";
 import AdminControlledUserList from "./users";
 import RegisterMainPage from "./users/register";
 import GoldRegister from "./users/register-gold"
@@ -18,14 +18,14 @@ import CurrentUser from "./users/current-user";
 import TopNavigationBar from "./home/top-navigation-bar";
 import welcomeRecentNewUsersReducer
   from "./home/welcome/welcome-recent-new-users-reducer";
-// import followsReducer from "./follows/follows-reducer";
+import followsReducer from "./follows/follows-reducer";
 
 
 const store = configureStore({
   reducer: {
     users: usersReducer,
     welcomeUsers: welcomeRecentNewUsersReducer,
-    // follows:followsReducer
+    follows:followsReducer
   }
 })
 
@@ -40,9 +40,9 @@ function App() {
             <TopNavigationBar/>
             <Routes>
               <Route path="/" element={<HomePage/>}/>
-              {/*<Route path="/profile" element={<Profile/>}/>*/}
-              {/*<Route path="/profile/:uid" element={<OthersProfiles/>}/>*/}
-              {/*<Route path="/other" element={<OthersProfiles/>}/>*/}
+              <Route path="/profile" element={<Profile/>}/>
+              <Route path="/profile/:uid" element={<OthersProfiles/>}/>
+              <Route path="/other" element={<OthersProfiles/>}/>
               <Route path="/users" element={<AdminControlledUserList/>}/>
               <Route path="/register" element={<RegisterMainPage/>}/>
               <Route path="/register/bronze" element={<BronzeRegister/>}/>

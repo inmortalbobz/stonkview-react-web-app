@@ -13,7 +13,7 @@ const TopNavigationBar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <Link to="/" className="navbar-brand d-flex align-items-center">
-            <img src="logo.webp" alt="Logo" className="img-fluid me-2 rounded-circle" height={50} width={50} />
+            <img src="/logo.webp" alt="Logo" className="img-fluid me-2 rounded-circle" height={50} width={50} />
             <span className="fw-bold" style={{ fontSize: '1.25rem' }}>Stonk</span>
             <span className="fw-bold text-doge" style={{ fontSize: '1.25rem' }}>View</span>
           </Link>
