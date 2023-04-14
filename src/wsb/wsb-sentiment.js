@@ -49,7 +49,7 @@ const WsbSentiment = () => {
                       {renderSentimentIcon(stock.sentiment)}
                       <span className="ml-2"> {stock.sentiment}</span>
                     </td>
-                    <td>{stock.sentiment_score.toFixed(3)}</td>
+                    <td>{stock.sentiment_score ? stock.sentiment_score.toFixed(3) : null}</td>
                   </tr>
               ))}
               </tbody>

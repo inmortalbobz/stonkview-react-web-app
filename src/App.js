@@ -17,6 +17,7 @@ import HomePage from "./home";
 import CurrentUser from "./users/current-user";
 import TopNavigationBar from "./home/top-navigation-bar";
 import WsbPage from "./wsb"
+import WsbSearch from "./wsb/wsb-search"
 import welcomeRecentNewUsersReducer
   from "./home/welcome/welcome-recent-new-users-reducer";
 import followsReducer from "./follows/follows-reducer";
@@ -50,8 +51,11 @@ function App() {
               <Route path="/register/gold" element={<GoldRegister/>}/>
               <Route path="/register/admin" element={<AdminRegister/>}/>
               <Route path="/login" element={<Login/>}/>
-              <Route path="/wsb" element={<WsbPage/>} />
               <Route path="edit-profile" element={<EditProfileComponent/>}/>
+              <Route path="/wsb" element={<WsbPage/>} />
+              <Route path="/wsb/search" element={<WsbSearch />} />
+              <Route path="/wsb/search/:searchTerm" element={<WsbSearch />}
+              />
             </Routes>
           </CurrentUser>
         </div>
