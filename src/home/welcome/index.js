@@ -12,22 +12,22 @@ const WelcomeUsers = () => {
   }, []);
 
   return (
-      <div className="welcome-users-banner d-flex align-items-center welcome-banner-image">
-        <h5 className="mb-0 me-4 text-white">New Users Are Ready to The Moon!!!</h5>
-        <div className="d-flex flex-row overflow-auto">
-          {userArray && (
-              <ul className="list-unstyled d-flex mb-0">
-                {userArray?.map((item) => (
-                    <li className="me-3" key={item._id}>
-                      <a href={`/profile/${item._id}`} className="text-decoration-none  text-white">
-                        {item.username}
-                      </a>
-                    </li>
-                ))}
-              </ul>
-          )}
-        </div>
+    <div className="welcome-users-banner d-flex align-items-center welcome-banner-image">
+      <h5 className="mb-0 me-4 text-white">New Users Are Ready to The Moon!!!</h5>
+      <div className="d-flex flex-row overflow-auto">
+        {userArray && (
+          <ul className="list-unstyled d-flex mb-0">
+            {userArray?.map((item) => (
+              <li className="me-3" key={item._id}>
+                <a href={`/profile/${item._id}`} className="text-decoration-none  text-white">
+                  {item.username}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
+    </div>
   );
 };
 

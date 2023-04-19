@@ -53,7 +53,7 @@ const widgetOptions = {
     }
   ]
 };
-export default  class LogSummary extends React.PureComponent {
+export default class LogSummary extends React.PureComponent {
   constructor(props) {
     super(props);
     this._ref = React.createRef();
@@ -77,11 +77,10 @@ export default  class LogSummary extends React.PureComponent {
   }
 
   render() {
-    return(
-        <div class="tradingview-widget-container" ref={this._ref}>
-          <div class="tradingview-widget-container__widget"></div>
-
-        </div>
+    return (
+      <div class="tradingview-widget-container" ref={this._ref}>
+        <div class="tradingview-widget-container__widget"></div>
+      </div>
     );
   }
 
